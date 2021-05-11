@@ -46,6 +46,12 @@ public class Main {
 
 		domicilio = domicilio(scan);
 
+		imprimirTicket(subTotal, iva, total, impresion, razonSocial, domicilio);
+
+	}
+
+	public static void imprimirTicket(double subTotal, double iva, double total, String impresion, String razonSocial,
+			String domicilio) {
 		System.out.println("\n\nImprimiendo Ticket...\n\n");
 
 		System.out.println("*************************************************************************************");
@@ -63,7 +69,6 @@ public class Main {
 		System.out.println("-------------------------------------------------------------------------------------");
 		mostrarTotalesFactura(subTotal, iva, total);
 		System.out.println("*************************************************************************************");
-
 	}
 
 	public static String imprimirProductos(int cantProducto1, double precioUnidad1, double subTotal1, String impresion,
