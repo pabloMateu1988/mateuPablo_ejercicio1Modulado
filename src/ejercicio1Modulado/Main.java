@@ -22,11 +22,8 @@ public class Main {
 		String descripcion1 = null;
 		String razonSocial;
 		String domicilio;
-		String hayProductos = "s";
 
-		hayProductos = preguntaSiHayProductos(scan);
-
-		while ("s".equals(hayProductos)) {
+		while ("s".equals(preguntaSiHayProductos(scan))) {
 
 			descripcion1 = descripcionProducto(scan);
 
@@ -39,8 +36,6 @@ public class Main {
 			subTotal = subTotalProductos(subTotal1, subTotal);
 
 			impresion = imprimirProductos(cantProducto1, precioUnidad1, subTotal1, impresion, descripcion1);
-
-			hayProductos = preguntaSiHayProductos(scan);
 
 		}
 
