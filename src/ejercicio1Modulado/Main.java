@@ -38,8 +38,7 @@ public class Main {
 
 			subTotal = subTotalProductos(subTotal1, subTotal);
 
-			impresion += "\n" + cantProducto1 + "\t| " + descripcion1.toString() + "\t\t\t| $" + precioUnidad1
-					+ "\t\t| $" + subTotal1;
+			impresion = imprimirProductos(cantProducto1, precioUnidad1, subTotal1, impresion, descripcion1);
 
 			hayProductos = preguntaSiHayProductos(scan);
 
@@ -57,8 +56,7 @@ public class Main {
 		System.out.println("*************************************************************************************");
 		Date fecha = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyy");
-		System.out.print("Fecha: ");
-		System.out.println(sdf.format(fecha));
+		mostrarFecha(fecha, sdf);
 		System.out.println("*************************************************************************************");
 		mostrarRazonSocial(razonSocial);
 		mostrarDomicilio(domicilio);
@@ -71,6 +69,18 @@ public class Main {
 		mostrarTotalesFactura(subTotal, iva, total);
 		System.out.println("*************************************************************************************");
 
+	}
+
+	public static String imprimirProductos(int cantProducto1, double precioUnidad1, double subTotal1, String impresion,
+			String descripcion1) {
+		impresion += "\n" + cantProducto1 + "\t| " + descripcion1.toString() + "\t\t\t| $" + precioUnidad1
+				+ "\t\t| $" + subTotal1;
+		return impresion;
+	}
+
+	public static void mostrarFecha(Date fecha, SimpleDateFormat sdf) {
+		System.out.print("Fecha: ");
+		System.out.println(sdf.format(fecha));
 	}
 
 	public static void mostrarRazonSocial(String razonSocial) {
