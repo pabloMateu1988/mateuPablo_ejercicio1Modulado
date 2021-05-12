@@ -39,16 +39,17 @@ public class Main {
 
 		}
 
-		iva = iva(subTotal);
-		total = total(subTotal, iva, total);
 		scan.nextLine();
 		razonSocial = ingresarRazonSocial(scan);
 
-		domicilio = domicilio(scan);
+		domicilio = ingresarDomicilio(scan);
 
-		imprimirTicket(subTotal, iva, total, impresion, razonSocial, domicilio);
+		imprimirTicket(subTotal, iva(subTotal), total(subTotal, iva(subTotal), total), impresion, razonSocial,
+				domicilio);
 
 	}
+
+	// Procedimientos
 
 	public static void imprimirTicket(double subTotal, double iva, double total, String impresion, String razonSocial,
 			String domicilio) {
@@ -67,7 +68,7 @@ public class Main {
 		System.out.println("-------------------------------------------------------------------------------------");
 		System.out.println(impresion.toString());
 		System.out.println("-------------------------------------------------------------------------------------");
-		mostrarTotalesFactura(subTotal, iva, total);
+		mostrarTotalesFactura(subTotal, iva(subTotal), total);
 		System.out.println("*************************************************************************************");
 	}
 
@@ -118,7 +119,7 @@ public class Main {
 		return subTotal + subTotal1;
 	}
 
-	public static String domicilio(Scanner scan) {
+	public static String ingresarDomicilio(Scanner scan) {
 		String domicilio;
 		System.out.println("Domicilio: ");
 		domicilio = scan.nextLine();
